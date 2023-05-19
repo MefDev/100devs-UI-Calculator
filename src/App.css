@@ -1,0 +1,220 @@
+.main-container
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: .25rem auto;
+  /* ------------------------------------ Variables ------------------------------------*/
+  --c-bg-color: #FEBA2C;
+  --c-bg-color-dark: #FEB638;
+  --normal-color: #DFE2E6;
+  --normal-color-dark: #35393B;
+  --normal-text-color: #909B9F;
+  --more-bg-color: #F4EFE3;
+  --more-bg-color-dark: #484239;
+  --op-bg-color: #E1D5E9;
+  --equal-Btn: #9028DF;
+  --equal-Btn-dark: #48335C;
+  --equal-text-color-dark: #bd7be3;
+  --delete-widen-bg-color: #d2d9dd;
+  --delete-widen-bg-color-dark: #292A2D;
+  --delete-widen-text-color-dark: #515455;
+  --more-text-color: #EEDAAF;
+  --more-text-color-dark: #D39E2E;
+  --num-point-text-color: #9BA1A3;
+  --switch-btn-color: #CBD9E4;
+  --switch-btn-color-dark: #5B5F5F;
+}
+.calculator-container
+{
+  padding: 0rem 3rem 0rem 4rem;
+  max-width: 320px;
+  width: 80vw;
+  height: 98vh;
+  border: .5px solid lightgray;
+  border-radius: 25px;
+  box-shadow: 5px 5px 15px lightgray;
+}
+.btn-container
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 68px;
+  max-height: 68px;
+  width: 70px;
+  height: 70px;
+  border-radius: 46.5%;
+  color: #fff;
+}
+.btn-container:active{
+  opacity: .5;
+  cursor: pointer;
+  height: 35px;
+  transition: .5s;
+}
+.text-field
+{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: .75rem;
+  background: rgba(144, 40, 223, .09);
+  border: none;
+  border-radius: .75rem;
+  height: 7.5%;
+  box-shadow: 5px 5px 20px lightgray;
+  border-bottom: 5px solid var(--equal-Btn);
+}
+.text-field-dark
+{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: .75rem;
+  border: none;
+  border-radius: .75rem;
+  height: 7.5%;
+  box-shadow: 5px 5px 20px black;
+  border-bottom: 5px solid var(--equal-text-color-dark);
+  background: #f5e3fe
+}
+
+.field
+{
+  position: relative;
+  right: 2rem;
+  color: #5C6971;
+}
+.field-dark
+{
+  color: var(--delete-widen-bg-color);
+}
+.main-btn-func
+{
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  padding: .75rem 0;
+ 
+  
+}
+
+.main-btns
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  gap: 12px;
+  font-weight: bold;
+}
+
+.switch-btn-color
+{
+  color: var(--switch-btn-color); 
+}
+.switch-btn-color-dark
+{
+  color: var(--switch-btn-color-dark);
+  
+}
+
+
+ /* ------------------------------------ Background-colors for different btns ------------------------------------*/
+.c--btn-background
+{
+  background: var(--c-bg-color);
+  border: 1px solid var(--c-bg-color);
+  box-shadow: -2px -2px 2px #fff, .5px 2px 5px var(--c-bg-color);
+}
+.c--btn-background-dark
+{
+  background: var(--c-bg-color-dark);
+  border: 1px solid inherit;
+  box-shadow: -2px -2px 2px var(--c-bg-color), .5px 2px 5px #000;
+  color: #fff;
+}
+.more--btn-background
+{
+  background: var(--more-bg-color);
+  border: 1px solid var( --more-bg-color);
+  box-shadow: -2px -2px 2px #fff, .5px 2px 5px var(--c-bg-color);
+  color: var(--more-text-color);
+}
+.more--btn-background-dark
+{
+  background: var(--more-bg-color-dark);
+  border: 1px solid inherit;
+  box-shadow: -2px -2px 2px rgb(90, 90, 90), .5px 2px 5px #000;
+  color: var(--more-text-color-dark);
+}
+.op--btn-background
+{
+  background: var(--op-bg-color);
+  border: 1px solid var(--op-bg-color);
+  box-shadow: -2px -2px 2px #fff, .5px 2px 5px var(--equal-Btn);
+  color: var(--equal-Btn)
+}
+.op--btn-background-dark
+{
+  background: var(--equal-Btn-dark);
+  border: 1px solid inherit;
+  box-shadow: -2px -2px 2px rgb(90, 90, 90), .5px 2px 5px #000;
+  color: var(--equal-text-color-dark)
+}
+.num--btn-background
+{
+  background: var( --normal-color);
+  border: 1px solid var(--normal-color);
+  box-shadow: -2px -2px 2px #fff, .5px 2px 5px gray;
+  color: var(--normal-text-color)
+}
+.num--btn-background-dark
+{
+  background: var( --normal-color-dark);
+  border: 1px solid inherit;
+  box-shadow: -2px -2px 2px rgb(90, 90, 90), .5px 2px 5px #000;
+  color: var(--num-point-text-color)
+}
+
+.equal--btn-background
+{
+  background: var(--equal-Btn);
+  border: 1px solid var(--equal-Btn);
+  box-shadow: -2px -2px 2px #fff, .5px 2px 5px var(--equal-Btn);
+  color: #fff;
+  transform: scaleY(2);
+  position: relative;
+  top: 40px;
+  border-radius: 45%;
+}
+.equal--btn-background-dark
+{
+  background: #922AE8;
+  border: 1px solid inherit;
+  box-shadow: -1px -2px 2px rgb(90, 90, 90), .5px 2px 5px #000;
+  color: #fff;
+  transform: scaleY(2);
+  position: relative;
+  top: 40px;
+  border-radius: 45%;
+}
+.delete-widen--btn-background
+{
+  background: var(--delete-widen-bg-color);
+  border: 1px solid var(--delete-widen-bg-color);
+  box-shadow: -2px -2px 2px #fff, .5px 2px 5px darkgray;
+  color: gray;
+  font-weight: bold;
+}
+.delete-widen--btn-background-dark
+{
+  background: var(--delete-widen-bg-color-dark);
+  border: 1px solid inherit;
+  box-shadow: -1px -2px 2px rgb(90, 90, 90), .5px 2px 5px #000;
+  color: var(--delete-widen-text-color-dark);
+}
