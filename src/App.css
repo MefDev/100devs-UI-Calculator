@@ -5,6 +5,9 @@
   justify-content: center;
   align-items: center;
   padding: .25rem auto;
+  margin-top: auto;
+  
+ 
   /* ------------------------------------ Variables ------------------------------------*/
   --c-bg-color: #FEBA2C;
   --c-bg-color-dark: #FEB638;
@@ -31,7 +34,7 @@
   padding: 0rem 3rem 0rem 4rem;
   max-width: 320px;
   width: 80vw;
-  height: 98vh;
+  height: 665px;
   border: .5px solid lightgray;
   border-radius: 25px;
   box-shadow: 5px 5px 15px lightgray;
@@ -66,6 +69,7 @@
   height: 7.5%;
   box-shadow: 5px 5px 20px lightgray;
   border-bottom: 5px solid var(--equal-Btn);
+  overflow: hidden;
 }
 .text-field-dark
 {
@@ -86,6 +90,7 @@
   position: relative;
   right: 2rem;
   color: #5C6971;
+
 }
 .field-dark
 {
@@ -97,9 +102,7 @@
   justify-content: space-around;
   align-content: center;
   align-items: center;
-  padding: .75rem 0;
- 
-  
+  padding: .75rem 0; 
 }
 
 .main-btns
@@ -217,4 +220,76 @@
   border: 1px solid inherit;
   box-shadow: -1px -2px 2px rgb(90, 90, 90), .5px 2px 5px #000;
   color: var(--delete-widen-text-color-dark);
+}
+
+
+@media only screen and (max-width: 450px) {
+  
+  .calculator-container
+  {
+    width: 60vw;
+    height: 550px;
+  }
+  .btn-container
+  {
+    width: 45px;
+    height: 45px;
+    font-size: x-small;
+  }
+  .switch-btn-color, .switch-btn-color-dark
+  {
+    width: 100px;
+  }
+  footer, small
+  {
+    text-align: center;
+  }
+  small
+  {
+    font-size: small;
+  }
+}
+@media only screen and (max-width: 360px)
+{
+
+  .calculator-container
+  {
+    width: 48vw;
+    height: 425px;
+  }
+  .btn-container
+  {
+    width: 30px;
+    height: 30px;
+  }
+  .equal--btn-background, .equal--btn-background-dark
+  {
+    top: 20px;
+  }
+  footer, small, .btn-container
+  {
+    font-size: x-small;
+  }
+}
+@media only screen and (max-width: 300px)
+{
+  .calculator-container
+  {
+    
+    width: 45vw;
+    height: 380px;
+  }
+  .btn-container
+  {
+    width: 20px;
+    height: 20px;
+  }
+  .switch-btn-color, .switch-btn-color-dark
+  {
+    display: none;
+  }
+  .equal--btn-background, .equal--btn-background-dark
+  {
+    top: 10px;
+  }
 }

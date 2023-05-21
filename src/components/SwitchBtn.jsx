@@ -53,7 +53,7 @@ export default function SwitchBtn(props)
     }));
 
     return (
-        <div>
+        <div className="test">
         <FormGroup>
             <FormControlLabel
             control={<MaterialUISwitch checked={props.checked} onChange={props.onChange}  sx={{ m: 1 }}  />}

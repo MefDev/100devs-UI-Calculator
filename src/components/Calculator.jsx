@@ -9,12 +9,7 @@ export default function Calculator()
     const [ bgColor, setBgColor ] = useState("");
     const [ moreBtnColor, setMoreBtnColor] = useState(false);
     const [checked, setChecked] = useState(false)
-   
-    /* Reset the state */ 
-    function handleReset()
-    {
-        setValue("")
-    }
+    
     /* Change the calculator backgroud based the switch btn */
     const handleSwitch  = event => {
         setChecked(event.target.checked)
@@ -29,7 +24,6 @@ export default function Calculator()
             setMoreBtnColor(prevState => !prevState)
             
         }  
-        
     }
     /* Toggle dark mode classes */
     const moreBtnclr = moreBtnColor ? "more--btn-background-dark" : "more--btn-background"
@@ -52,31 +46,29 @@ export default function Calculator()
                     <Button className={`btn-container ${deleteWidenBtnClr}`}  s content="↑"/> 
                 </div>
                 <div className="main-btns">
-                        <Button onClick={handleReset} className={`btn-container ${cBtnclr}`}    content="C"/>
-                        <Button onClick={() => setValue(prevValue => prevValue + "(")} className={`btn-container ${moreBtnclr}`} content="("/>
-                        <Button onClick={() => setValue(prevValue => prevValue + ")")} className={`btn-container ${moreBtnclr}`} content=")"/>
-                        <Button onClick={() => setValue(prevValue => prevValue + "*")} className={`btn-container ${equalBtnClr}`}   content="x"/>
-                        <Button onClick={() => setValue(prevValue => prevValue + "**(1/2)")} className={`btn-container ${moreBtnclr}`} content="√"/>
-                        <Button onClick={() => setValue(prevValue => prevValue + "%")} className={`btn-container ${moreBtnclr}`} content="%"/>
-                        <Button className={`btn-container ${moreBtnclr}`} content="+/-"/>
-                        <Button onClick={() => setValue(prevValue => prevValue + "/")} className={`btn-container ${equalBtnClr}`}   content="/"/>
-                        <Button onClick={() => setValue(prevValue => prevValue + 7)}  className={`btn-container ${numBtnClr}`}  content="7"/>
-                        <Button onClick={() => setValue(prevValue => prevValue + 8)} className={`btn-container ${numBtnClr}`}  content="8"/>
-                        <Button onClick={() => setValue(prevValue => prevValue + 9)} className={`btn-container ${numBtnClr}`}  content="9"/>
-                        <Button onClick={() => setValue(prevValue => prevValue + "-")} className={`btn-container ${equalBtnClr}`}   content="-"/>
-                        <Button onClick={() => setValue(prevValue => prevValue + 4)}  className={`btn-container ${numBtnClr}`}  content="4"/>
-                        <Button onClick={() => setValue(prevValue => prevValue + 5)}  className={`btn-container ${numBtnClr}`}  content="5"/>
-                        <Button onClick={() => setValue(prevValue => prevValue + 6)}  className={`btn-container ${numBtnClr}`}  content="6"/>
-                        <Button onClick={() => setValue(prevValue => prevValue + "+")} className={`btn-container ${equalBtnClr}`}   content="+"/>
-                        <Button onClick={() => setValue(prevValue => prevValue + 1)}   className={`btn-container ${numBtnClr}`}  content="1"/>
-                        <Button onClick={() => setValue(prevValue => prevValue + 2)}   className={`btn-container ${numBtnClr}`}  content="2"/>
-                        <Button onClick={() => setValue(prevValue => prevValue + 3)} className={`btn-container ${numBtnClr}`}  content="3"/>
-                        <Button onClick={() => setValue(              
-                         String(eval(value)).length > 3 &&  String(eval(value)).includes(".") ? String(eval(value).toFixed(4)) : String(eval(value))
-                            )} className={` btn-container ${equalBigBtnClr}`} content="="/>
-                        <Button onClick={() => setValue(prevValue => prevValue + ".")} className={`btn-container ${numBtnClr}`} content="."/>
-                        <Button onClick={() => setValue(prevValue => prevValue + 0)} className={`btn-container ${numBtnClr}`}     content="0"/>
-                        <Button onClick={() => setValue("del")} className={`btn-container ${deleteWidenBtnClr}`}   content="DEL"/> 
+                        <Button setValue={setValue} className={`btn-container ${cBtnclr}`}                          oper="reset"   content="C"/>
+                        <Button setValue={setValue} className={`btn-container ${moreBtnclr}`}                       oper="("       content="("/>
+                        <Button setValue={setValue} className={`btn-container ${moreBtnclr}`}                       oper=")"       content=")"/>
+                        <Button setValue={setValue} className={`btn-container ${equalBtnClr}`}                      oper="*"       content="x"/>
+                        <Button setValue={setValue} className={`btn-container ${moreBtnclr}`}                       oper="**(1/2)" content="√"/>
+                        <Button setValue={setValue} className={`btn-container ${moreBtnclr}`}                       oper="%"       content="%"/>
+                        <Button setValue={setValue} className={`btn-container ${moreBtnclr}`}                       oper="+/-"     content="+/-"/>
+                        <Button setValue={setValue} className={`btn-container ${equalBtnClr}`}                      oper="/"       content="/"/>
+                        <Button setValue={setValue} className={`btn-container ${numBtnClr}`}                        oper="7"       content="7"/>
+                        <Button setValue={setValue} className={`btn-container ${numBtnClr}`}                        oper="8"       content="8"/>
+                        <Button setValue={setValue} className={`btn-container ${numBtnClr}`}                        oper="9"       content="9"/>
+                        <Button setValue={setValue} className={`btn-container ${equalBtnClr}`}                      oper="-"       content="-"/>
+                        <Button setValue={setValue} className={`btn-container ${numBtnClr}`}                        oper="4"       content="4"/>
+                        <Button setValue={setValue} className={`btn-container ${numBtnClr}`}                        oper="5"       content="5"/>
+                        <Button setValue={setValue} className={`btn-container ${numBtnClr}`}                        oper="6"       content="6"/>
+                        <Button setValue={setValue} className={`btn-container ${equalBtnClr}`}                      oper="+"       content="+"/>
+                        <Button setValue={setValue} className={`btn-container ${numBtnClr}`}                        oper="1"       content="1"/>
+                        <Button setValue={setValue} className={`btn-container ${numBtnClr}`}                        oper="2"       content="2"/>
+                        <Button setValue={setValue} className={`btn-container ${numBtnClr}`}                        oper="3"       content="3"/>
+                        <Button setValue={setValue} className={` btn-container ${equalBigBtnClr}`}   value={value}  oper="="       content="="/>
+                        <Button setValue={setValue} className={`btn-container ${numBtnClr}`}                        oper= "."      content="."/>
+                        <Button setValue={setValue} className={`btn-container ${numBtnClr}`}                        oper="0"       content="0"/>
+                        <Button setValue={setValue} className={`btn-container ${deleteWidenBtnClr}`} value={value}  oper="del"     content="DEL"/> 
                 </div>
             </div>
             )
